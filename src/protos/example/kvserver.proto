@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package kvserver;
+
+service Kvdb {
+    rpc db (Request) returns (Reponse) {}
+}
+
+enum Operation {
+    get = 0;
+    set = 1;
+    del = 2;
+    scan = 3;
+}
+
+message Request {
+    Operation oper = 1;
+    string key = 2;
+    string value = 3;
+}
+
+message Reponse {
+    string str1 = 1;
+    string str2 = 2;
+}

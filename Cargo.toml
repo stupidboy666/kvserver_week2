@@ -1,0 +1,22 @@
+[package]
+name = "week1"
+version = "0.1.0"
+authors = ["lyhhhhhh <1300833021@qq.com>"]
+edition = "2018"
+
+[[bin]]
+name = "server"
+path = "src/server.rs"
+
+[[bin]]
+name = "client"
+path = "src/client.rs"
+
+[dependencies]
+protobuf = "2.0.2"
+futures = "0.1.16"
+grpcio = { version = "0.4", default-features = false, features = ["protobuf-codec"] }
+
+
+[build-dependencies]
+protoc-grpcio = "1.0.1"
